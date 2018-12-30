@@ -46,11 +46,18 @@ public class ServletValiderCommande extends HttpServlet {
 		List<ProduitCommande> panier = (List<ProduitCommande>) session.getAttribute("panier");
 		boolean result = placeCustomerOrder(customer,panier,total);
 		if(result) {
-			session.invalidate();
-			response.getWriter().println("Commande enregistrée avec succés");
+			//session.invalidate();
+			//response.getWriter().println("Commande enregistrée avec succés");
+			session.setAttribute("success", true);
+			session.setAttribute("result", "Votre commande est enregistrée avec succés <a href='/ecommerce'>Revenir à la page d'accueil</a>");
+			response.sendRedirect("recapitulatif.jsp");
 		}else {
-			session.invalidate();
-			response.getWriter().println("Commande pas enregistrée");
+			//session.invalidate();
+			session.setAttribute("success", false);
+			session.setAttribute("result", "Problème d'enregistrement de votre commande réessayer <a href='/ecommerce'>Revenir à la page d'accueil</a>");
+			//response.getWriter().println("Commande pas enregistrée");
+			response.sendRedirect("recapitulatif.jsp");
+
 		}
 		
 		

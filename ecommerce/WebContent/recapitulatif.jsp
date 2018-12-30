@@ -76,6 +76,16 @@
 			</tbody>
 		</table>
 		<a href="ValiderCommande" class="btn btn-warning">Valider la commande</a>
+		<c:if test="${success == true }">
+			<div class="alert alert-success">
+				<p>${result } </p>
+			</div>
+		</c:if>
+		<c:if test="${success == false }">
+			<div class="alert alert-warning">
+				<p>${result } </p>
+			</div>
+		</c:if>
 	</div>
 </body>
 </html>
