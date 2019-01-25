@@ -7,6 +7,7 @@
 		<class>eilco.metier.entities.CommandeClient</class>
 		<class>eilco.metier.entities.Produit</class>
 		<class>eilco.metier.entities.ProduitCommande</class>
+		<class>eilco.metier.entities.User</class>
 		<properties>
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.MySQLDialect" />
